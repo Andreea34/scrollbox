@@ -8,3 +8,6 @@ Specific height limits can be set with {min-height} and {max-height}.
 
 ## dependencies
 Needs both scrollbox.css and scrollbox.js files to work. No styling or scripting frameworks required.
+
+## demo
+https://andreea34.github.io/Scrollbox/
