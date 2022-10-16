@@ -5,60 +5,69 @@
 
 const scrollbox = function (target) {
 
-  if (target === undefined || target === null) { target = '.scrollbox'; }
+  // target
+  if (target === undefined || target === null) { target = '.scrollbox' }
 
   // select
-  const page = document.querySelector('body');
-  const scrolls = document.querySelectorAll(target);
+  const page = document.querySelector('body')
+  const scrolls = document.querySelectorAll(target)
 
   if (scrolls !== undefined && scrolls !== null) {
 
-    // get
-    let winHight = parseInt(window.innerHeight);
-    let pageHeight = parseInt(page.clientHeight);
-    let currentHeight;
-    let minHeight;
-    let maxHeight;
-    let newHeights = [];
+    // select
+    let winHight = parseInt(window.innerHeight)
+    let pageHeight = Math.max( page.clientHeight, page.scrollHeight, page.offsetHeight )
+    let pageMargin = parseInt(getStyle(page, 'marginTop')) + parseInt(getStyle(page, 'marginBottom'))
+    if (pageMargin !== null || isNaN(pageMargin)) { pageHeight = pageHeight + pageMargin }
+    let pagePadding = parseInt(getStyle(page, 'paddingTop')) + parseInt(getStyle(page, 'paddingBottom'))
+    if (pagePadding !== null || isNaN(pagePadding)) { pageHeight = pageHeight + pagePadding }
+    let currentHeight
+    let minHeight
+    let maxHeight
+    let newHeights = []
 
-    scrolls.forEach(scroll => {
+    scrolls.forEach((scroll, index) => {
 
       // get
-      currentHeight = parseInt(scroll.clientHeight);
-      minHeight = parseInt(window.getComputedStyle(scroll).minHeight);
-      maxHeight = parseInt(window.getComputedStyle(scroll).maxHeight);
+      currentHeight = parseInt(scroll.clientHeight)
+      minHeight = parseInt(getStyle(scroll, 'minHeight'))
+      maxHeight = parseInt(getStyle(scroll, 'maxHeight'))
 
-      //calc
-      if (pageHeight > winHight) { newHeight = currentHeight - (pageHeight - winHight); }
-      else if (pageHeight < winHight) { newHeight = currentHeight + (winHight - pageHeight); }
+      // calc
+      if (pageHeight > winHight) { newHeight = currentHeight - (pageHeight - winHight) }
+      else if (pageHeight < winHight) { newHeight = currentHeight + (winHight - pageHeight) }
 
       // check
       if (minHeight !== NaN) { if (newHeight < minHeight) { newHeight = minHeight; } }
       if (maxHeight !== NaN) { if (newHeight > maxHeight) { newHeight = maxHeight; } }
-      newHeights.push(newHeight);
+      newHeights.push(newHeight)
 
-    });
+      //set
+      scroll.style.height = `${newHeights[ index ]}px`
 
-    // set
-    scrolls.forEach((scroll, index) => {
-      scroll.style.height = `${newHeights[ index ]}px`;
-      scroll.style.border = `red !important`;
-    });
+    })
 
   }
 }
 
-window.addEventListener('load', function (e) { scrollbox(); });
+// helper
+const getStyle = function (target, style) {
+  return window.getComputedStyle(target)[style]
+}
 
-let throttleTimer = null;  // wait for resize event to "finish"
-let throttleResize = true; // ignore resize event bubbling
-window.addEventListener('resize', function(e){
+// initiate
+window.addEventListener('load', scrollbox() )
+
+// resize
+let throttleTimer = null  // wait for resize event to "finish"
+let throttleResize = true // ignore resize event bubbling
+window.addEventListener('resize', e => {
   if (throttleResize === true) {
-    throttleResize = false;
-    clearTimeout(throttleTimer);
+    throttleResize = false
+    clearTimeout(throttleTimer)
     throttleTimer = setTimeout(function() {
-      scrollbox();
+      scrollbox()
       throttleResize = true;
-    }, 300);
+    }, 300)
   }
-});
+})
