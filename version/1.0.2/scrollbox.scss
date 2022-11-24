@@ -1,0 +1,95 @@
+/*!
+ * Scrollbox - https://github.com/Andreea34/scrollbox
+ * Version - 1.0.2
+ * Licensed under the MIT License - https://opensource.org/licenses/MIT
+ * Copyright (c) 2022 Andreea Popescu - http://andreeapopescu.com
+ */
+
+// variables
+$scrollbox-padding: 5px;
+$scrollbox-border-size: 1px;
+$scrollbox-border-style: solid;
+$scrollbox-border-color: #777;
+$scrollbox-border-radius: 3px;
+$scrollbox-scrollbar-size: 9px;
+$scrollbox-scrollbar-radius: $scrollbox-scrollbar-size/2;
+$scrollbox-scrollbar-color: #777;
+$scrollbox-scrollbar-color-active: #555;
+
+.scrollbox,
+.scrollbox:hover,
+.scrollbox:focus,
+.scrollbox:active,
+.scrollbox:target {
+
+  // global styles
+  min-height: 200px;
+  padding: $scrollbox-padding;
+  outline: $scrollbox-border-style $scrollbox-border-size $scrollbox-border-color;
+  border: solid $scrollbox-padding transparent;
+  border-radius: $scrollbox-border-radius;
+  resize: none;
+  overflow: scroll;
+  cursor: auto;
+  &.scroll-y { overflow-x: hidden; }
+  &.scroll-x { overflow-y: hidden; }
+
+  // mozilla styles
+  scrollbar-width: thin;
+  scrollbar-color: $scrollbox-scrollbar-color transparent;
+
+  // webkit styles
+  &::-webkit-resizer { display: none; }
+  &::-webkit-scrollbar { width: $scrollbox-scrollbar-size; height: $scrollbox-scrollbar-size;
+    &-button:start { display: none; }
+    &-button:end { display: none; }
+    &-corner { display: none; }
+
+    &:vertical { background: none; border: none; }
+    &:vertical:corner-present { background: none; border: none; }
+    &-thumb:vertical { min-height: $scrollbox-scrollbar-size*3; background: $scrollbox-scrollbar-color; border: none; border-radius: $scrollbox-scrollbar-radius; }
+    &-thumb:vertical:hover,
+    &-thumb:vertical:active { background: $scrollbox-scrollbar-color-active; }
+    &-track:vertical { background: none; border: none; }
+    &-track-piece:vertical { background: none; border: none; }
+    &-track-piece:vertical:start { margin-top: $scrollbox-padding; }
+    &-track-piece:vertical:end { margin-bottom: $scrollbox-padding; }
+    &-track-piece:vertical:decrement { background: none; border: none; }
+    &-track-piece:vertical:increment { background: none; border: none; }
+    &-button:vertical { height: $scrollbox-scrollbar-size; background: none; border: none; }
+    &-button:vertical:decrement { background: none; border: none; }
+    &-button:vertical:decrement:active { background: none; border: none; }
+    &-button:vertical:increment { height: $scrollbox-scrollbar-size; background: none; border: none; }
+    &-button:vertical:increment:active { background: none; border: none; }
+    &-button:vertical:end:increment:corner-present { height: $scrollbox-scrollbar-size; background: none; border: none; }
+
+    &:horizontal { background: none; border: none; }
+    &:horizontal:corner-present { background: none; border: none; }
+    &-thumb:horizontal { min-height: $scrollbox-scrollbar-size*3; background: $scrollbox-scrollbar-color; border: none; border-radius: $scrollbox-scrollbar-radius; }
+    &-thumb:horizontal:hover,
+    &-thumb:horizontal:active { background: $scrollbox-scrollbar-color-active; }
+    &-track:horizontal { background: none; border: none; }
+    &-track-piece:horizontal { background: none; border: none; }
+    &-track-piece:horizontal:start { margin-left: $scrollbox-padding; }
+    &-track-piece:horizontal:end { margin-right: $scrollbox-padding; }
+    &-track-piece:horizontal:decrement { background: none; border: none; }
+    &-track-piece:horizontal:increment { background: none; border: none; }
+    &-button:horizontal { height: $scrollbox-scrollbar-size; background: none; border: none; }
+    &-button:horizontal:decrement { background: none; border: none; }
+    &-button:horizontal:decrement:active { background: none; border: none; }
+    &-button:horizontal:increment { height: $scrollbox-scrollbar-size; background: none; border: none; }
+    &-button:horizontal:increment:active { background: none; border: none; }
+    &-button:horizontal:end:increment:corner-present { height: $scrollbox-scrollbar-size; background: none; border: none; }
+  }
+
+  // disabled styles
+  &:disabled,
+  &[disabled],
+  &.disabled,
+  &::-webkit-scrollbar {
+    &:disabled,
+    &[disabled],
+    &.disabled { background: none; border: none; display: none; }
+  }
+
+}
