@@ -1,6 +1,6 @@
 /*!
  * Scrollbox - https://github.com/Andreea34/scrollbox
- * Version - 1.0.0
+ * Version - 1.0.1
  * Licensed under the MIT License - https://opensource.org/licenses/MIT
  * Copyright (c) 2022 Andreea Popescu - http://andreeapopescu.com
  */
@@ -11,13 +11,13 @@
 .scrollbox:target {
   min-height: 200px;
   padding: 5px;
-  resize: none;
-  overflow: scroll;
-  outline: solid 1px gray;
+  outline: solid 1px #777;
   border: solid 5px transparent;
   border-radius: 3px;
+  resize: none;
+  overflow: scroll;
   scrollbar-width: thin;
-  scrollbar-color: gray transparent;
+  scrollbar-color: #777 transparent;
 }
 .scrollbox.scroll-y,
 .scrollbox:hover.scroll-y,
@@ -33,41 +33,20 @@
 .scrollbox:target.scroll-x {
   overflow-y: hidden;
 }
+.scrollbox::-webkit-resizer,
+.scrollbox:hover::-webkit-resizer,
+.scrollbox:focus::-webkit-resizer,
+.scrollbox:active::-webkit-resizer,
+.scrollbox:target::-webkit-resizer {
+  display: none;
+}
 .scrollbox::-webkit-scrollbar,
 .scrollbox:hover::-webkit-scrollbar,
 .scrollbox:focus::-webkit-scrollbar,
 .scrollbox:active::-webkit-scrollbar,
 .scrollbox:target::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-  background: none;
-  border: none;
-}
-.scrollbox::-webkit-scrollbar-thumb,
-.scrollbox:hover::-webkit-scrollbar-thumb,
-.scrollbox:focus::-webkit-scrollbar-thumb,
-.scrollbox:active::-webkit-scrollbar-thumb,
-.scrollbox:target::-webkit-scrollbar-thumb {
-  background: gray;
-  border: none;
-  border-radius: 5px;
-}
-.scrollbox::-webkit-scrollbar-track,
-.scrollbox:hover::-webkit-scrollbar-track,
-.scrollbox:focus::-webkit-scrollbar-track,
-.scrollbox:active::-webkit-scrollbar-track,
-.scrollbox:target::-webkit-scrollbar-track {
-  background: none;
-  border: none;
-  border: none;
-}
-.scrollbox::-webkit-scrollbar-track-piece,
-.scrollbox:hover::-webkit-scrollbar-track-piece,
-.scrollbox:focus::-webkit-scrollbar-track-piece,
-.scrollbox:active::-webkit-scrollbar-track-piece,
-.scrollbox:target::-webkit-scrollbar-track-piece {
-  background: none;
-  border: none;
+  width: 9px;
+  height: 9px;
 }
 .scrollbox::-webkit-scrollbar-button:start,
 .scrollbox:hover::-webkit-scrollbar-button:start,
@@ -88,13 +67,6 @@
 .scrollbox:focus::-webkit-scrollbar-corner,
 .scrollbox:active::-webkit-scrollbar-corner,
 .scrollbox:target::-webkit-scrollbar-corner {
-  display: none;
-}
-.scrollbox::-webkit-resizer,
-.scrollbox:hover::-webkit-resizer,
-.scrollbox:focus::-webkit-resizer,
-.scrollbox:active::-webkit-resizer,
-.scrollbox:target::-webkit-resizer {
   display: none;
 }
 .scrollbox::-webkit-scrollbar:vertical,
@@ -118,9 +90,21 @@
 .scrollbox:focus::-webkit-scrollbar-thumb:vertical,
 .scrollbox:active::-webkit-scrollbar-thumb:vertical,
 .scrollbox:target::-webkit-scrollbar-thumb:vertical {
-  min-height: 20px;
-  background: gray;
-  border-radius: 5px;
+  min-height: 27px;
+  background: #777;
+  border: none;
+  border-radius: 4.5px;
+}
+.scrollbox::-webkit-scrollbar-thumb:vertical:hover, .scrollbox::-webkit-scrollbar-thumb:vertical:active,
+.scrollbox:hover::-webkit-scrollbar-thumb:vertical:hover,
+.scrollbox:hover::-webkit-scrollbar-thumb:vertical:active,
+.scrollbox:focus::-webkit-scrollbar-thumb:vertical:hover,
+.scrollbox:focus::-webkit-scrollbar-thumb:vertical:active,
+.scrollbox:active::-webkit-scrollbar-thumb:vertical:hover,
+.scrollbox:active::-webkit-scrollbar-thumb:vertical:active,
+.scrollbox:target::-webkit-scrollbar-thumb:vertical:hover,
+.scrollbox:target::-webkit-scrollbar-thumb:vertical:active {
+  background: #555;
 }
 .scrollbox::-webkit-scrollbar-track:vertical,
 .scrollbox:hover::-webkit-scrollbar-track:vertical,
@@ -129,6 +113,13 @@
 .scrollbox:target::-webkit-scrollbar-track:vertical {
   background: none;
   border: none;
+}
+.scrollbox::-webkit-scrollbar-track-piece:vertical,
+.scrollbox:hover::-webkit-scrollbar-track-piece:vertical,
+.scrollbox:focus::-webkit-scrollbar-track-piece:vertical,
+.scrollbox:active::-webkit-scrollbar-track-piece:vertical,
+.scrollbox:target::-webkit-scrollbar-track-piece:vertical {
+  background: none;
   border: none;
 }
 .scrollbox::-webkit-scrollbar-track-piece:vertical:start,
@@ -166,6 +157,7 @@
 .scrollbox:focus::-webkit-scrollbar-button:vertical,
 .scrollbox:active::-webkit-scrollbar-button:vertical,
 .scrollbox:target::-webkit-scrollbar-button:vertical {
+  height: 9px;
   background: none;
   border: none;
 }
@@ -190,6 +182,7 @@
 .scrollbox:focus::-webkit-scrollbar-button:vertical:increment,
 .scrollbox:active::-webkit-scrollbar-button:vertical:increment,
 .scrollbox:target::-webkit-scrollbar-button:vertical:increment {
+  height: 9px;
   background: none;
   border: none;
 }
@@ -206,7 +199,9 @@
 .scrollbox:focus::-webkit-scrollbar-button:vertical:end:increment:corner-present,
 .scrollbox:active::-webkit-scrollbar-button:vertical:end:increment:corner-present,
 .scrollbox:target::-webkit-scrollbar-button:vertical:end:increment:corner-present {
-  display: none;
+  height: 9px;
+  background: none;
+  border: none;
 }
 .scrollbox::-webkit-scrollbar:horizontal,
 .scrollbox:hover::-webkit-scrollbar:horizontal,
@@ -229,10 +224,21 @@
 .scrollbox:focus::-webkit-scrollbar-thumb:horizontal,
 .scrollbox:active::-webkit-scrollbar-thumb:horizontal,
 .scrollbox:target::-webkit-scrollbar-thumb:horizontal {
-  min-width: 20px;
-  background: gray;
+  min-height: 27px;
+  background: #777;
   border: none;
-  border-radius: 5px;
+  border-radius: 4.5px;
+}
+.scrollbox::-webkit-scrollbar-thumb:horizontal:hover, .scrollbox::-webkit-scrollbar-thumb:horizontal:active,
+.scrollbox:hover::-webkit-scrollbar-thumb:horizontal:hover,
+.scrollbox:hover::-webkit-scrollbar-thumb:horizontal:active,
+.scrollbox:focus::-webkit-scrollbar-thumb:horizontal:hover,
+.scrollbox:focus::-webkit-scrollbar-thumb:horizontal:active,
+.scrollbox:active::-webkit-scrollbar-thumb:horizontal:hover,
+.scrollbox:active::-webkit-scrollbar-thumb:horizontal:active,
+.scrollbox:target::-webkit-scrollbar-thumb:horizontal:hover,
+.scrollbox:target::-webkit-scrollbar-thumb:horizontal:active {
+  background: #555;
 }
 .scrollbox::-webkit-scrollbar-track:horizontal,
 .scrollbox:hover::-webkit-scrollbar-track:horizontal,
@@ -241,6 +247,13 @@
 .scrollbox:target::-webkit-scrollbar-track:horizontal {
   background: none;
   border: none;
+}
+.scrollbox::-webkit-scrollbar-track-piece:horizontal,
+.scrollbox:hover::-webkit-scrollbar-track-piece:horizontal,
+.scrollbox:focus::-webkit-scrollbar-track-piece:horizontal,
+.scrollbox:active::-webkit-scrollbar-track-piece:horizontal,
+.scrollbox:target::-webkit-scrollbar-track-piece:horizontal {
+  background: none;
   border: none;
 }
 .scrollbox::-webkit-scrollbar-track-piece:horizontal:start,
@@ -278,6 +291,7 @@
 .scrollbox:focus::-webkit-scrollbar-button:horizontal,
 .scrollbox:active::-webkit-scrollbar-button:horizontal,
 .scrollbox:target::-webkit-scrollbar-button:horizontal {
+  height: 9px;
   background: none;
   border: none;
 }
@@ -302,6 +316,7 @@
 .scrollbox:focus::-webkit-scrollbar-button:horizontal:increment,
 .scrollbox:active::-webkit-scrollbar-button:horizontal:increment,
 .scrollbox:target::-webkit-scrollbar-button:horizontal:increment {
+  height: 9px;
   background: none;
   border: none;
 }
@@ -318,12 +333,60 @@
 .scrollbox:focus::-webkit-scrollbar-button:horizontal:end:increment:corner-present,
 .scrollbox:active::-webkit-scrollbar-button:horizontal:end:increment:corner-present,
 .scrollbox:target::-webkit-scrollbar-button:horizontal:end:increment:corner-present {
-  display: none;
+  height: 9px;
+  background: none;
+  border: none;
 }
-.scrollbox::-webkit-scrollbar:disabled,
+.scrollbox:disabled:disabled, .scrollbox:disabled[disabled], .scrollbox:disabled.disabled, .scrollbox[disabled]:disabled, .scrollbox[disabled][disabled], .scrollbox[disabled].disabled, .scrollbox.disabled:disabled, .scrollbox.disabled[disabled], .scrollbox.disabled.disabled, .scrollbox::-webkit-scrollbar:disabled, .scrollbox::-webkit-scrollbar[disabled], .scrollbox::-webkit-scrollbar.disabled,
+.scrollbox:hover:disabled:disabled,
+.scrollbox:hover:disabled[disabled],
+.scrollbox:hover:disabled.disabled,
+.scrollbox:hover[disabled]:disabled,
+.scrollbox:hover[disabled][disabled],
+.scrollbox:hover[disabled].disabled,
+.scrollbox:hover.disabled:disabled,
+.scrollbox:hover.disabled[disabled],
+.scrollbox:hover.disabled.disabled,
 .scrollbox:hover::-webkit-scrollbar:disabled,
+.scrollbox:hover::-webkit-scrollbar[disabled],
+.scrollbox:hover::-webkit-scrollbar.disabled,
+.scrollbox:focus:disabled:disabled,
+.scrollbox:focus:disabled[disabled],
+.scrollbox:focus:disabled.disabled,
+.scrollbox:focus[disabled]:disabled,
+.scrollbox:focus[disabled][disabled],
+.scrollbox:focus[disabled].disabled,
+.scrollbox:focus.disabled:disabled,
+.scrollbox:focus.disabled[disabled],
+.scrollbox:focus.disabled.disabled,
 .scrollbox:focus::-webkit-scrollbar:disabled,
+.scrollbox:focus::-webkit-scrollbar[disabled],
+.scrollbox:focus::-webkit-scrollbar.disabled,
+.scrollbox:active:disabled:disabled,
+.scrollbox:active:disabled[disabled],
+.scrollbox:active:disabled.disabled,
+.scrollbox:active[disabled]:disabled,
+.scrollbox:active[disabled][disabled],
+.scrollbox:active[disabled].disabled,
+.scrollbox:active.disabled:disabled,
+.scrollbox:active.disabled[disabled],
+.scrollbox:active.disabled.disabled,
 .scrollbox:active::-webkit-scrollbar:disabled,
-.scrollbox:target::-webkit-scrollbar:disabled {
+.scrollbox:active::-webkit-scrollbar[disabled],
+.scrollbox:active::-webkit-scrollbar.disabled,
+.scrollbox:target:disabled:disabled,
+.scrollbox:target:disabled[disabled],
+.scrollbox:target:disabled.disabled,
+.scrollbox:target[disabled]:disabled,
+.scrollbox:target[disabled][disabled],
+.scrollbox:target[disabled].disabled,
+.scrollbox:target.disabled:disabled,
+.scrollbox:target.disabled[disabled],
+.scrollbox:target.disabled.disabled,
+.scrollbox:target::-webkit-scrollbar:disabled,
+.scrollbox:target::-webkit-scrollbar[disabled],
+.scrollbox:target::-webkit-scrollbar.disabled {
+  background: none;
+  border: none;
   display: none;
 }/*# sourceMappingURL=scrollbox.css.map */
