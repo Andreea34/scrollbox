@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Andreea Popescu">
+  <meta name="description" content="A cross-browser plugin that keeps the full length of your webpage in view.">
+  <title>Scrollbox</title>
+  <link rel="stylesheet" href="./scrollbox.css">
+  <style>
+    /* demo styles (not required for scrollbox to work) */
+    body { padding: 2rem; font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; }
+    h1, h2 { margin: 0; }
+    hr { border: none; border-top: dashed 1px #aaa; margin: 3rem 0 2rem 0; }
+    .scrollbox { margin-bottom: 2rem; }
+    .wide-block { width: 1000px; padding: 10px; color: black; background: rgba(0,0,0,.25); }
+    textarea { box-sizing: border-box; display: block; width: 100%; padding: 2rem; margin-top: 1.6rem; font-family: 'Arial', sans-serif; font-size: 1rem; line-height: 1.6; }
+  </style>
+</head>
+<body role="application">
+  <h1>Scrollbox Demo</h1>
+  <p>
+    Scrollbox is a cross-browser plugin that keeps the full length of your webpage in view.
+    It does this by listening for the <code class="javascript">window.resize()</code> event,
+    and dynamically adjusting the height of all class <code class="css">.scrollbox</code>
+    elements on the page.
+  </p>
+
+  <p>Resize your browser window to see Scrollbox in action.</p>
+
+  <hr>
+
+  <!-- default -->
+  <h2>Scrollbox Default</h2>
+  <p>Scrolls on both axes and has a <code class="css">{min-height}</code> of 200px.</p>
+  <div class="scrollbox">
+    <div class="wide-block">
+      <p>Wide content that triggers <strong>horizontal scrollbars</strong> on smaller screens.</p>
+    </div>
+    <p>
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+    </p>
+  </div>
+
+  <p>Scroll axis can be specified with <code class="css">.scroll-x</code> and <code class="css">.scroll-y</code>.</p>
+
+  <hr>
+
+  <!-- scroll y -->
+  <h2>Scrollbox with <code class="css">.scroll-y</code></h2>
+  <p>This scrollbox will only scroll <em>vertically</em>.</p>
+  <div class="scrollbox scroll-y">
+    <div class="wide-block">
+      <p>Wide content that triggers <strong>horizontal scrollbars</strong> on smaller screens.</p>
+    </div>
+    <p>
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- scroll x -->
+  <h2>Scrollbox with <code class="css">.scroll-x</code></h2>
+  <p>This scrollbox will only scroll <em>horizontally</em>.</p>
+  <div class="scrollbox scroll-x">
+    <div class="wide-block">
+      <p>Wide content that triggers <strong>horizontal scrollbars</strong> on smaller screens.</p>
+    </div>
+    <p>
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+    </p>
+  </div>
+
+  <p>Scroll height limits can be set with <code class="css">{min-height}</code> and <code class="css">{max-height}</code>.
+
+  <hr>
+
+  <!-- min height -->
+  <h2>Scrollbox with <code class="css">{min-height}</code></h2>
+  <p>This scrollbox will never be <em>shorter</em> than 50px</p>
+  <div class="scrollbox" style="min-height: 50px;">
+    <div class="wide-block">
+      <p>Wide content that triggers <strong>horizontal scrollbars</strong> on smaller screens.</p>
+    </div>
+    <p>
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- max height -->
+  <h2>Scrollbox with <code class="css">{max-height}</code></h2>
+  <p>This scrollbox will never be <em>taller</em> than 500px.</p>
+  <div class="scrollbox" style="max-height: 500px;">
+    <div class="wide-block">
+      <p>Wide content that triggers <strong>horizontal scrollbars</strong> on smaller screens.</p>
+    </div>
+    <p>
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- min & max height -->
+  <h2>Scrollbox with <code class="css">{min-height}</code> and <code class="css">{max-height}</code></h2>
+  <p>This scrollbox will never be <em>shorter</em> than 50px nor <em>taller</em> than 500px.</p>
+  <div class="scrollbox" style="min-height: 50px; max-height: 500px;">
+    <div class="wide-block">
+      <p>Wide content that triggers <strong>horizontal scrollbars</strong> on smaller screens.</p>
+    </div>
+    <p>
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+      Lengthy text that triggers <strong>vertical scrollbars</strong> on smaller screens.
+    </p>
+  </div>
+
+  <hr>
+
+  <!-- textarea -->
+  <h2>Scrollbox with <code class="html">&lt;textarea&gt;</code></h2>
+  <textarea class="scrollbox scroll-y">Necessitatibus illum incidunt. Soluta modi dolorem, optio assumenda non adipisci? Quo rerum quibusdam molestiae repellat provident nostrum, cupiditate nobis voluptas exercitationem ratione deleniti veritatis dolores deserunt omnis magni expedita fugit non placeat eos libero debitis cumque tenetur quasi? Facilis atque nostrum enim, accusamus nemo non eligendi, aut perferendis labore corporis voluptate ab neque odio sint nisi numquam assumenda nihil aliquid consequuntur pariatur saepe cum dicta error veritatis. Asperiores libero, quasi tempora enim fugiat corrupti iusto reprehenderit tenetur quaerat necessitatibus nam ex excepturi modi optio expedita ut aliquam voluptate, voluptatem perspiciatis dolorum sint at! Voluptatem laborum voluptatibus explicabo quis temporibus laudantium suscipit inventore cumque, commodi sed soluta, voluptas nesciunt? Ea non, similique minima consectetur itaque rerum placeat praesentium fuga possimus veritatis quam ipsum quod magnam adipisci nostrum culpa. Placeat, perspiciatis. Nam, dignissimos quisquam? Aperiam nulla assumenda similique. Provident saepe magnam nam obcaecati impedit unde autem libero at maiores placeat nulla quos blanditiis amet laborum nesciunt molestias error veniam, dolorum recusandae aut cupiditate minima voluptas sit iusto! Perferendis, at numquam. Quos at neque labore natus sit nihil minus tempore nostrum impedit, doloribus nulla corrupti mollitia sint tempora quam. Cumque quae facilis asperiores facere!</textarea>
+
+  <script type="application/javascript" src="./scrollbox.js"></script>
+</body>
+</html>
