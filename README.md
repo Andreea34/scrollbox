@@ -26,18 +26,18 @@ You can add a single container around your whole content, or several containers 
 
 #### Scroll Direction
 
-By default, Scrollbox allows ==scrolling== on both axes (vertical and horizontal). This behaviour can be altered using additional CSS class names.
+By default, Scrollbox allows scrolling on both axes (vertical and horizontal). This behaviour can be altered using additional CSS classes.
 
-This .scrollbox will only scroll _vertically_:
+This container will only scroll _vertically_:
 
 ```html
-<div class="scrollbox .scroll-y">...</div>
+<div class="scrollbox scroll-y">...</div>
 ```
 
-This .scrollbox will only scroll _horizontally_:
+This container will only scroll _horizontally_:
 
 ```html
-<div class="scrollbox .scroll-x">...</div>
+<div class="scrollbox scroll-x">...</div>
 ```
 
 #### Height Control
