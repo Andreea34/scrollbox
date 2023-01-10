@@ -1,13 +1,24 @@
-# scrollbox
-Scrollbox is a cross-browser plugin that keeps the full length of your webpage in view. It does this by listening for the window.resize() (JS) event, and dynamically adjusting the height of all .scrollbox (CSS) elements on the page.
+# Scrollbox
+Scrollbox is a cross-browser plugin that keeps the full length of your webpage in view. It does this by making specific sections of your content scrollable whenever the length of your webpage exceeds the available height of the browser window.
 
-## options
-By default, scrollbox allows scrolling on both axes and has a {min-height} of 200px. 
-Specific scroll behaviour can be set with .scroll-x and .scroll-y. 
-Specific height limits can be set with {min-height} and {max-height}. 
+## How is this different than what the browser already does?
+Different browsers have different scrolling behaviours and different visual styles built-in. This is normal, but it's not always consistent across different devices or orperating systems. Scrollbox tries to avoid the use of built-in browser scrollbars by implementing scrollable containers that look and behave the same across all browsers, devices and operating systems.
 
-## dependencies
-Needs both scrollbox.css and scrollbox.js files to work. No styling or scripting frameworks required.
+## How do I use Scrollbox?
 
-## demo
-https://andreea34.github.io/Scrollbox/
+### Dependencies
+Scrollbox requires both scrollbox.css and scrollbox.js files to work. No styling or scripting frameworks are required.
+
+### Initiation
+Place any content that you wish to make scrollable inside a container element (HTML) with a class of "scrollbox". You can add a single container around your whole content, or several containers around different sections of your content. Once the page is loaded in the browser, Scrollbox will actively listen for the window.resize() event (JS), and dynamically adjust the height of all .scrollbox containers on the page, according to the options you specify for each container.
+
+### Options
+By default, Scrollbox allows scrolling on both axes (vertical and horizontal). This behaviour can be altered using additional class names:
+
+.scroll-y  -->  allows scrolling on vertical axis only
+.scroll-x  -->  allows scrolling on horizontal axis only
+
+By default, Scrollbox containers have a minimum height of 200px. This is to prevent content from becoming too small to interact with on smaller screens. You can specify different height limits for each .scrollbox container using inline styles (CSS) with {min-height} and {max-height}.
+
+## Demo
+https://andreea34.github.io/scrollbox/
