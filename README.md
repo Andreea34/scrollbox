@@ -55,9 +55,9 @@ This container will only scroll _horizontally_:
 
 #### Height Control
 
-By default, Scrollbox containers have a minimum height of 200px. This is to prevent content from becoming too small to interact with on smaller screens. You can specify different height limits for each .scrollbox container using inline styles (CSS) with {min-height} and {max-height}.
+By default, Scrollbox containers have a minimum height of 200px. This is to prevent content from becoming too small to interact with on smaller screens. You can specify different height limits for each container using inline styles (CSS) with {min-height} and {max-height}.
 
-This .scrollbox will never be _shorter_ than 50px or _taller_ than 500px:
+This container will never be _shorter_ than 50px or _taller_ than 500px:
 
 ```html
 <div class="scrollbox" style="min-height: 50px; max-height: 500px;">...</div>
