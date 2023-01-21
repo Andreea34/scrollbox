@@ -12,6 +12,19 @@ Different browsers have different scrolling behaviours and different visual styl
 
 Scrollbox requires both scrollbox.css and scrollbox.js files to work. No styling or scripting frameworks are required.
 
+```html
+<html>
+  <head>
+  ...
+    <link rel="stylesheet" href="scrollbox.css">
+  </head>
+  <body>
+    ...
+    <script type="application/javascript" src="scrollbox.js"></script>
+  </body>
+</html>
+```
+
 ### Use
 
 Place any content that you wish to make scrollable inside a container element (HTML) with a class of "scrollbox".
