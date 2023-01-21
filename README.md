@@ -10,7 +10,7 @@ Different browsers have different scrolling behaviours and different visual styl
 
 ### Dependencies
 
-Scrollbox requires both scrollbox.css and scrollbox.js files to work. No styling or scripting frameworks are required.
+Scrollbox requires both _scrollbox.css_ and _scrollbox.js_ files to work. No styling or scripting frameworks are required.
 
 ```html
 <html>
